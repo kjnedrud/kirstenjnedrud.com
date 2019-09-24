@@ -17,12 +17,12 @@ require_once('includes/config.php');
 	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 	<?php if (ENV == 'prod') : ?>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-51227523-1"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo GOOGLE_ANALYTICS_ID; ?>"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
 			function gtag(){dataLayer.push(arguments);}
 			gtag('js', new Date());
-			gtag('config', 'UA-51227523-1');
+			gtag('config', <?php echo GOOGLE_ANALYTICS_ID; ?>);
 		</script>
 	<?php endif; ?>
 </head>
