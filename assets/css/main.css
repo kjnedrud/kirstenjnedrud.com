@@ -1,0 +1,526 @@
+/**
+ * Main site styles
+ */
+/**
+ **********************************************************
+ *
+ * Defaults
+ *
+ **********************************************************
+ */
+html, body {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+html {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body {
+  background: #f1f1f1;
+  color: #333;
+}
+
+/**
+ **********************************************************
+ *
+ * Typography
+ *
+ **********************************************************
+ */
+.slab, h1, .h1, h2, .h2, h3, .h3 {
+  font-family: "Bitter", serif;
+}
+
+.sans {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00769c;
+  font-weight: bold;
+  text-decoration: underline;
+  transition: color 200ms, background 200ms, border 200ms;
+}
+a:not(.button) {
+  margin: -0.125em;
+  padding: 0.125em;
+}
+a:focus, a:hover {
+  color: #00769c;
+}
+a:focus {
+  background: #fff;
+  border-radius: 0;
+  outline: none;
+  outline: 2px dotted #c06;
+}
+
+h1:first-child, .h1:first-child, h2:first-child, .h2:first-child, h3:first-child, .h3:first-child, h4:first-child, .h4:first-child, h5:first-child, .h5:first-child, h6:first-child, .h6:first-child,
+p:first-child, ul:first-child, ol:first-child {
+  margin-top: 0;
+}
+h1:last-child, .h1:last-child, h2:last-child, .h2:last-child, h3:last-child, .h3:last-child, h4:last-child, .h4:last-child, h5:last-child, .h5:last-child, h6:last-child, .h6:last-child,
+p:last-child, ul:last-child, ol:last-child {
+  margin-bottom: 0;
+}
+
+p, ul, ol {
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+/**
+ * Headlines
+ */
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+h1, .h1 {
+  font-size: 2.5em;
+}
+
+h2, .h2 {
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+h3, .h3 {
+  font-size: 1.125em;
+}
+
+h4, .h4 {
+  font-size: 1em;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+h5, .h5 {
+  font-size: 1em;
+}
+
+h6, .h6 {
+  font-size: 0.75em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.title-group {
+  margin-bottom: 1.7rem;
+  margin-top: 1.2rem;
+}
+.title-group:first-child {
+  margin-top: 0;
+}
+.title-group h1, .title-group .h1, .title-group h2, .title-group .h2, .title-group h3, .title-group .h3, .title-group h4, .title-group .h4, .title-group h5, .title-group .h5, .title-group h6, .title-group .h6 {
+  margin-bottom: 0;
+}
+.title-group h1 + *, .title-group .h1 + *, .title-group h2 + *, .title-group .h2 + *, .title-group h3 + *, .title-group .h3 + *, .title-group h4 + *, .title-group .h4 + *, .title-group h5 + *, .title-group .h5 + *, .title-group h6 + *, .title-group .h6 + * {
+  margin-top: 0.5em;
+}
+
+/**
+ * Lists
+ */
+ul, ol, dl {
+  padding-left: 2em;
+}
+
+li {
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+
+.list-plain {
+  list-style-type: none;
+}
+
+/**
+ * Misc.
+ */
+.note {
+  color: #999;
+  font-size: 0.75em;
+  font-style: italic;
+}
+
+.error {
+  color: #c06;
+}
+
+/**
+ **********************************************************
+ *
+ * Colors
+ *
+ **********************************************************
+ */
+.dark, .grey-dark, .purple-cool, .purple-warm, .blue-medium {
+  color: #f1f1f1;
+}
+.dark a, .grey-dark a, .purple-cool a, .purple-warm a, .blue-medium a {
+  color: #fff;
+}
+.dark a:not(.button):focus, .grey-dark a:not(.button):focus, .purple-cool a:not(.button):focus, .purple-warm a:not(.button):focus, .blue-medium a:not(.button):focus, .dark a:not(.button):hover, .grey-dark a:not(.button):hover, .purple-cool a:not(.button):hover, .purple-warm a:not(.button):hover, .blue-medium a:not(.button):hover {
+  color: #ffd877;
+}
+.dark a:not(.button):focus, .grey-dark a:not(.button):focus, .purple-cool a:not(.button):focus, .purple-warm a:not(.button):focus, .blue-medium a:not(.button):focus {
+  background: none;
+  background: rgba(51, 13, 92, 0.5);
+}
+.dark a.button:focus, .grey-dark a.button:focus, .purple-cool a.button:focus, .purple-warm a.button:focus, .blue-medium a.button:focus, .dark a.button:hover, .grey-dark a.button:hover, .purple-cool a.button:hover, .purple-warm a.button:hover, .blue-medium a.button:hover {
+  background: #0cafab;
+}
+.dark a.button:focus, .grey-dark a.button:focus, .purple-cool a.button:focus, .purple-warm a.button:focus, .blue-medium a.button:focus {
+  border-color: #ffd877 #00769c #00769c #ffd877;
+}
+
+.light, .grey-lighter, .grey-eggshell, .white, .blue, .aqua {
+  color: #333;
+}
+
+.blue a:not(.button), .aqua a:not(.button) {
+  color: #330d5c;
+}
+.blue a:not(.button):focus, .blue a:not(.button):hover, .aqua a:not(.button):focus, .aqua a:not(.button):hover {
+  color: #56176a;
+}
+.blue a:not(.button):focus, .aqua a:not(.button):focus {
+  background: none;
+}
+
+.grey-dark {
+  background: #666;
+}
+
+.purple-cool {
+  background: #330d5c;
+}
+
+.purple-warm {
+  background: #56176a;
+}
+
+.blue {
+  background: #0e9ac8;
+}
+
+.aqua {
+  background: #0cafab;
+}
+
+.grey-lighter {
+  background: #e3e3e3;
+}
+
+.grey-eggshell {
+  background: #f1f1f1;
+}
+
+.white {
+  background: #fff;
+}
+
+/**
+ **********************************************************
+ *
+ * Layout / Spacing
+ *
+ **********************************************************
+ */
+.container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 1em;
+  max-width: 100%;
+  width: 960px;
+}
+.container.content-width {
+  width: 640px;
+}
+
+/**
+ * Margin
+ */
+.flush-top {
+  margin-top: 0;
+}
+
+.flush-bottom {
+  margin-bottom: 0;
+}
+
+/**
+ * Padding
+ */
+.pad-1, .pad {
+  padding: 1em;
+}
+
+.pad-x-1, .pad-x {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.pad-y-1, .pad-y {
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
+
+.pad-2 {
+  padding: 2em;
+}
+
+.pad-x-2 {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.pad-y-2 {
+  padding-bottom: 2em;
+  padding-top: 2em;
+}
+
+.pad-3 {
+  padding: 3em;
+}
+
+.pad-x-3 {
+  padding-left: 3em;
+  padding-right: 3em;
+}
+
+.pad-y-3 {
+  padding-bottom: 3em;
+  padding-top: 3em;
+}
+
+.pad-4 {
+  padding: 4em;
+}
+
+.pad-x-4 {
+  padding-left: 4em;
+  padding-right: 4em;
+}
+
+.pad-y-4 {
+  padding-bottom: 4em;
+  padding-top: 4em;
+}
+
+/**
+ * Alignment, Floats & Clears
+ */
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.f-left {
+  float: left;
+}
+
+.f-right {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.clearfix:after {
+  clear: both;
+  content: "";
+  display: block;
+  height: 0;
+  width: 100%;
+}
+
+/**
+ * todo: grid/columns
+ */
+/**
+ **********************************************************
+ *
+ * Forms & Buttons
+ *
+ **********************************************************
+ */
+label {
+  font-size: 0.75em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+label.required:before {
+  color: #c06;
+  content: "*";
+  display: inline-block;
+  margin-left: -1em;
+  text-align: center;
+  width: 1em;
+}
+
+/**
+ * Form Inputs
+ */
+input[type=text], input[type=email], select, textarea {
+  background: #fff;
+  border: 2px solid #ccc;
+  border-radius: 0;
+  box-sizing: border-box;
+  box-shadow: none;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  padding: 0.5em;
+  width: 100%;
+}
+input.invalid[type=text], input.invalid[type=email], select.invalid, textarea.invalid {
+  border-color: #c06;
+}
+input[type=text]:focus, input[type=email]:focus, select:focus, textarea:focus {
+  border-color: #0cafab;
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+label + input[type=text], label + input[type=email], label + select, label + textarea {
+  margin-top: 0.25em;
+}
+input[type=text] + .note, input[type=email] + .note, select + .note, textarea + .note {
+  margin-top: 0.25em;
+}
+.grey-lighter input[type=text], .grey-lighter input[type=email], .grey-lighter select, .grey-lighter textarea {
+  border-color: #999;
+}
+
+textarea {
+  max-width: 100%;
+  min-height: 3em;
+  min-width: 100%;
+}
+
+/**
+ * Buttons
+ */
+a.button, button, input[type=submit], input[type=button] {
+  background: #0e9ac8;
+  border: 2px solid transparent;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 24px;
+  max-width: 100%;
+  min-width: 120px;
+  padding: 0.4em 1.2em;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.375);
+}
+a.button:focus, button:focus, input[type=submit]:focus, input[type=button]:focus, a.button:hover, button:hover, input[type=submit]:hover, input[type=button]:hover {
+  background: #0cafab;
+  background: #56176a;
+  text-decoration: none;
+}
+a.button:focus, button:focus, input[type=submit]:focus, input[type=button]:focus {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+  border-color: #c06 #330d5c #330d5c #c06;
+  outline: none;
+}
+a.full.button, button.full, input.full[type=submit], input.full[type=button] {
+  width: 100%;
+}
+
+a[readonly].button, button[readonly], input[readonly][type=submit], input[readonly][type=button], a[disabled].button, button[disabled], input[disabled][type=submit], input[disabled][type=button], input[readonly][type=text], input[readonly][type=email], select[readonly], textarea[readonly], input[disabled][type=text], input[disabled][type=email], select[disabled], textarea[disabled] {
+  opacity: 0.5;
+}
+
+/**
+ **********************************************************
+ *
+ * Site Header
+ *
+ **********************************************************
+ */
+/**
+ **********************************************************
+ *
+ * Hero
+ *
+ **********************************************************
+ */
+.hero {
+  padding: 6em 0;
+  text-align: center;
+}
+
+/**
+ **********************************************************
+ *
+ * Site Footer
+ *
+ **********************************************************
+ */
+.site-footer {
+  font-size: 12px;
+  padding: 1em 0;
+  text-align: center;
+}
+
+/**
+ **********************************************************
+ *
+ * Responsive Breakpoints
+ *
+ **********************************************************
+ */
+@media screen and (min-width: 1025px) {
+  body {
+    font-size: 18px;
+  }
+
+  .container.content-width {
+    width: 720px;
+  }
+}
+@media screen and (max-width: 768px) {
+  h1, .h1 {
+    font-size: 2.125em;
+  }
+
+  h2, .h2 {
+    font-size: 1.375em;
+  }
+
+  h3, .h3 {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 480px) {
+  a.button, button, input[type=submit], input[type=button] {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

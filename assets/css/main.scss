@@ -1,0 +1,661 @@
+/**
+ * Main site styles
+ */
+
+// vars, functions, mixins
+
+$base-size: 16px;
+$line-height: 1.5;
+
+// fonts
+$sans: "Open Sans", Helvetica, Arial, sans-serif;
+$slab: "Bitter", serif;
+
+// colors
+$grey-darker: #333;
+$grey-dark: #666;
+$grey-medium: #999;
+$grey-light: #ccc;
+$grey-lighter: #e3e3e3;
+$grey-eggshell: #f1f1f1;
+
+$purple-cool: #330d5c;
+$purple-warm: #56176a;
+
+$blue: #0e9ac8;
+$blue-bright: $blue;
+$blue-medium: #00769c;
+$aqua: #0cafab;
+
+$yellow: #ffd877;
+$pink: #c06;
+
+// paths
+$img-dir: '../img';
+
+@function img($img, $path: $img-dir) {
+	@return url('#{$path}/#{$img}');
+}
+
+/**
+ **********************************************************
+ *
+ * Defaults
+ *
+ **********************************************************
+ */
+
+html, body {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	min-height: 100%;
+}
+
+html {
+	font-family: $sans;
+	font-size: $base-size;
+	line-height: $line-height;
+}
+
+body {
+	background: $grey-eggshell;
+	color: $grey-darker;
+}
+
+
+/**
+ **********************************************************
+ *
+ * Typography
+ *
+ **********************************************************
+ */
+
+.slab {
+	font-family: $slab;
+}
+
+.sans {
+	font-family: $sans;
+}
+
+a {
+	color: $blue-medium;
+	font-weight: bold;
+	text-decoration: underline;
+	transition: color 200ms, background 200ms, border 200ms;
+
+	&:not(.button) {
+		margin: -0.125em;
+		padding: 0.125em;
+	}
+
+	&:focus, &:hover {
+		color: $blue-medium;
+	}
+
+	&:focus {
+		background: #fff;
+		border-radius: 0;
+		outline: none;
+		outline: 2px dotted $pink;
+	}
+}
+
+h1, h2, h3, h4, h5, h6,
+p, ul, ol {
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+p, ul, ol {
+	margin-bottom: 1em;
+	margin-top: 1em;
+}
+
+p {
+
+}
+
+/**
+ * Headlines
+ */
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 700;
+	line-height: 1.2;
+	margin-bottom: 1em;
+	margin-top: 1em;
+}
+
+h1, h2, h3 {
+	@extend .slab;
+}
+
+h1 {
+	font-size: 2.5em;
+}
+
+h2 {
+	font-size: 1.5em;
+	font-weight: 400;
+}
+
+h3 {
+	font-size: 1.125em;
+}
+
+h4 {
+	font-size: 1em;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+h6 {
+	font-size: 0.75em;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.h1 {
+	@extend h1;
+}
+
+.h2 {
+	@extend h2;
+}
+
+.h3 {
+	@extend h3;
+}
+
+.h4 {
+	@extend h4;
+}
+
+.h5 {
+	@extend h5;
+}
+
+.h6 {
+	@extend h6;
+}
+
+// group titles closer to content
+.title-group {
+	margin-bottom: 1.7rem;
+	margin-top: 1.2rem;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		margin-bottom: 0;
+
+		+ * {
+			margin-top: 0.5em;
+		}
+	}
+}
+
+/**
+ * Lists
+ */
+
+ul, ol, dl {
+	padding-left: 2em;
+}
+
+li {
+	margin-bottom: 0.5em;
+	margin-top: 0.5em;
+}
+
+.list-plain {
+	list-style-type: none;
+}
+
+/**
+ * Misc.
+ */
+
+.note {
+	color: $grey-medium;
+	font-size: 0.75em;
+	font-style: italic;
+}
+
+.error {
+	color: $pink;
+}
+
+
+/**
+ **********************************************************
+ *
+ * Colors
+ *
+ **********************************************************
+ */
+
+.dark {
+	color: $grey-eggshell;
+
+	a {
+		color: #fff;
+
+		&:not(.button) {
+
+			&:focus, &:hover {
+				color: $yellow;
+			}
+			&:focus {
+				background: none;
+				background: rgba($purple-cool, 0.5);
+			}
+		}
+
+		&.button {
+
+			&:focus, &:hover {
+				background: $aqua;
+			}
+
+			&:focus {
+				border-color: $yellow $blue-medium $blue-medium $yellow;
+			}
+		}
+	}
+}
+
+.light {
+	color: $grey-darker;
+}
+
+.grey-dark, .purple-cool, .purple-warm, .blue-medium {
+	@extend .dark;
+}
+.grey-lighter, .grey-eggshell, .white, .blue, .aqua {
+	@extend .light;
+}
+
+.blue, .aqua {
+	a:not(.button) {
+		color: $purple-cool;
+
+		&:focus, &:hover {
+			color: $purple-warm;
+		}
+		&:focus {
+			background: none;
+		}
+	}
+}
+
+.grey-dark {
+	background: $grey-dark;
+}
+
+.purple-cool {
+	background: $purple-cool;
+}
+
+.purple-warm {
+	background: $purple-warm;
+}
+
+.blue {
+	background: $blue;
+}
+
+.aqua {
+	background: $aqua;
+}
+
+.grey-lighter {
+	background: $grey-lighter;
+}
+
+.grey-eggshell {
+	background: $grey-eggshell;
+}
+
+.white {
+	background: #fff;
+}
+
+
+/**
+ **********************************************************
+ *
+ * Layout / Spacing
+ *
+ **********************************************************
+ */
+
+.container {
+	box-sizing: border-box;
+	margin: 0 auto;
+	padding: 0 1em;
+	max-width: 100%;
+	width: 960px;
+
+	// smaller width to prevent line lengths from getting too long
+	&.content-width {
+		width: $base-size * 40;
+	}
+}
+
+.site-main {
+
+}
+
+/**
+ * Margin
+ */
+
+.flush-top {
+	margin-top: 0;
+}
+
+.flush-bottom {
+	margin-bottom: 0;
+}
+
+/**
+ * Padding
+ */
+
+@for $i from 1 through 4 {
+	.pad-#{$i} {
+		padding: #{$i}em;
+	}
+	.pad-x-#{$i} {
+		padding-left: #{$i}em;
+		padding-right: #{$i}em;
+	}
+	.pad-y-#{$i} {
+		padding-bottom: #{$i}em;
+		padding-top: #{$i}em;
+	}
+}
+
+.pad {
+	@extend .pad-1;
+}
+
+.pad-x {
+	@extend .pad-x-1;
+}
+
+.pad-y {
+	@extend .pad-y-1;
+}
+
+/**
+ * Alignment, Floats & Clears
+ */
+
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.f-left {
+	float: left;
+}
+
+.f-right {
+	float: right;
+}
+
+.clear {
+	clear: both;
+}
+
+.clearfix {
+	&:after {
+		clear: both;
+		content: '';
+		display: block;
+		height: 0;
+		width: 100%;
+	}
+}
+
+/**
+ * todo: grid/columns
+ */
+
+
+/**
+ **********************************************************
+ *
+ * Forms & Buttons
+ *
+ **********************************************************
+ */
+
+label {
+	font-size: 0.75em;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+
+	&.required {
+		&:before {
+			color: $pink;
+			content: '*';
+			display: inline-block;
+			margin-left: -1em;
+			text-align: center;
+			width: 1em;
+		}
+	}
+}
+
+/**
+ * Form Inputs
+ */
+
+%input {
+	background: #fff;
+	border: 2px solid $grey-light;
+	border-radius: 0;
+	box-sizing: border-box;
+	box-shadow: none;
+	font-family: $sans;
+	font-size: $base-size;
+	padding: 0.5em;
+	width: 100%;
+
+	&.invalid {
+		border-color: $pink;
+	}
+
+	&:focus, &.invalid:focus {
+		border-color: $aqua;
+		box-shadow: inset 2px 2px 4px rgba(#000, 0.1);
+		outline: none;
+	}
+
+	label + & {
+		margin-top: 0.25em;
+	}
+
+	& + .note {
+		margin-top: 0.25em;
+	}
+
+	.grey-lighter & {
+		border-color: $grey-medium;
+	}
+}
+
+input[type=text], input[type=email], select, textarea {
+	@extend %input;
+}
+
+textarea {
+	max-width: 100%;
+	min-height: 3em;
+	min-width: 100%;
+}
+
+// todo: checkboxes / radios
+
+/**
+ * Buttons
+ */
+
+%button {
+	background: $blue;
+	border: 2px solid transparent;
+	border-radius: 0;
+	box-sizing: border-box;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-family: $sans;
+	font-size: $base-size * 1.25;
+	font-weight: bold;
+	line-height: $base-size * $line-height;
+	max-width: 100%;
+	min-width: 120px;
+	padding: #{(0.5 / 1.25)}em #{(1.5 / 1.25)}em;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: 0 2px 6px rgba(#000, 0.375);
+
+	&:focus, &:hover {
+		background: $aqua;
+		background: $purple-warm;
+		text-decoration: none;
+	}
+
+	&:focus {
+		box-shadow: 0px 4px 4px rgba(#000, 0.3);
+		border-color: $pink $purple-cool $purple-cool $pink;
+		outline: none;
+	}
+
+	&.full {
+		width: 100%;
+	}
+}
+
+a.button, button, input[type=submit], input[type=button] {
+	@extend %button;
+}
+
+%button, %input {
+	&[readonly], &[disabled] {
+		opacity: 0.5;
+	}
+}
+
+
+/**
+ **********************************************************
+ *
+ * Site Header
+ *
+ **********************************************************
+ */
+
+// todo
+.site-header, .site-header.dark {
+	// padding: 0.5em 0;
+}
+
+
+/**
+ **********************************************************
+ *
+ * Hero
+ *
+ **********************************************************
+ */
+
+.hero {
+	padding: 6em 0;
+	text-align: center;
+}
+
+
+/**
+ **********************************************************
+ *
+ * Site Footer
+ *
+ **********************************************************
+ */
+
+.site-footer {
+	font-size: 0.75 * $base-size;
+	padding: 1em 0;
+	text-align: center;
+}
+
+
+/**
+ **********************************************************
+ *
+ * Responsive Breakpoints
+ *
+ **********************************************************
+ */
+
+@media screen and (min-width: 1025px) {
+
+	$base-size: 18px;
+
+	body {
+		font-size: $base-size;
+	}
+
+	.container.content-width {
+		width: $base-size * 40;
+	}
+}
+
+@media screen and (max-width: 768px) {
+
+	h1 {
+		font-size: 2.125em;
+	}
+
+	h2 {
+		font-size: 1.375em;
+	}
+
+	h3 {
+		font-size: 1em;
+	}
+}
+
+@media screen and (max-width: 480px) {
+
+	%button {
+		width: 100%;
+	}
+}
