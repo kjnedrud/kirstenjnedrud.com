@@ -521,6 +521,10 @@ a[readonly].button, button[readonly], input[readonly][type=submit], input[readon
   a.button, button, input[type=submit], input[type=button] {
     width: 100%;
   }
+
+  .hero {
+    padding: 4em 0;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
