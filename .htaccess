@@ -1,0 +1,13 @@
+# cache assets for 10 years
+<IfModule mod_expires.c>
+	<FilesMatch "\.(css|js|png|jpg|gif|svg)$">
+		ExpiresActive On
+		ExpiresDefault "access plus 10 years"
+	</FilesMatch>
+</IfModule>
+
+# rewrite timestamped assets to actual file path
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteRule ^assets/(css|js|img)/(.+)\.([0-9]+)\.(css|js|png|jpg|gif|svg)$ assets/$1/$2.$4 [L]
+</IfModule>

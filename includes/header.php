@@ -3,8 +3,9 @@
  * Site Header
  */
 
-// config
+// config & helpers
 require_once('includes/config.php');
+require_once('includes/helpers.php');
 
 ?><!doctype html>
 <html lang="en">
@@ -13,7 +14,7 @@ require_once('includes/config.php');
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no">
 	<link href="//fonts.googleapis.com/css?family=Bitter:400,700,400italic|Open+Sans:400,400i,700,700i" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="<?php get_asset('/assets/css/main.css'); ?>">
 	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 	<?php if (ENV == 'prod') : ?>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
