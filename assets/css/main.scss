@@ -37,6 +37,20 @@ $img-dir: '../img';
 	@return url('#{$path}/#{$img}');
 }
 
+// swipe background diagonally on hover
+@mixin diagonal-swipe($background, $background-hover) {
+	background-color: $background;
+	background-image: linear-gradient(135deg, $background-hover 0%, $background-hover 50%, $background 50%, $background 100%);
+	background-size: 300% 100%;
+	background-position: 100% 50%;
+	transition: background 600ms;
+
+	&:focus, &:hover {
+		background-color: $background-hover;
+		background-position: 0% 50%;
+	}
+}
+
 /**
  **********************************************************
  *
@@ -81,25 +95,20 @@ body {
 }
 
 a {
+	border-bottom: 2px dashed transparent;
 	color: $blue-medium;
 	font-weight: bold;
 	text-decoration: underline;
-	transition: color 200ms, background 200ms, border 200ms;
-
-	&:not(.button) {
-		margin: -0.125em;
-		padding: 0.125em;
-	}
+	transition: 300ms;
 
 	&:focus, &:hover {
-		color: $blue-medium;
+		color: $purple-warm;
 	}
 
 	&:focus {
-		background: #fff;
 		border-radius: 0;
 		outline: none;
-		outline: 2px dotted $pink;
+		border-bottom: 2px dashed $pink;
 	}
 }
 
@@ -260,21 +269,6 @@ li {
 
 			&:focus, &:hover {
 				color: $yellow;
-			}
-			&:focus {
-				background: none;
-				background: rgba($purple-cool, 0.5);
-			}
-		}
-
-		&.button {
-
-			&:focus, &:hover {
-				background: $aqua;
-			}
-
-			&:focus {
-				border-color: $yellow $blue-medium $blue-medium $yellow;
 			}
 		}
 	}
@@ -486,6 +480,7 @@ label {
 	font-family: $sans;
 	font-size: $base-size;
 	padding: 0.5em;
+	transition: 300ms;
 	width: 100%;
 
 	&.invalid {
@@ -494,7 +489,7 @@ label {
 
 	&:focus, &.invalid:focus {
 		border-color: $aqua;
-		box-shadow: inset 2px 2px 4px rgba(#000, 0.1);
+		box-shadow: inset 2px 2px 4px rgba(#000, 0.3);
 		outline: none;
 	}
 
@@ -528,8 +523,9 @@ textarea {
  */
 
 %button {
-	background: $blue;
-	border: 2px solid transparent;
+	@include diagonal-swipe($blue, $aqua);
+	background-color: $blue;
+	border: 0;
 	border-radius: 0;
 	box-sizing: border-box;
 	color: #fff;
@@ -541,21 +537,22 @@ textarea {
 	line-height: $base-size * $line-height;
 	max-width: 100%;
 	min-width: 120px;
+	outline: 2px dashed transparent;
+	outline-offset: 2px;
 	padding: #{(0.5 / 1.25)}em #{(1.5 / 1.25)}em;
 	text-align: center;
 	text-decoration: none;
 	text-shadow: 0 2px 6px rgba(#000, 0.375);
+	transition: 600ms, outline 300ms;
 
 	&:focus, &:hover {
-		background: $aqua;
-		background: $purple-warm;
+		background-color: $purple-warm;
+		box-shadow: 4px 4px 6px rgba(#000, 0.3);
 		text-decoration: none;
 	}
 
 	&:focus {
-		box-shadow: 0px 4px 4px rgba(#000, 0.3);
-		border-color: $pink $purple-cool $purple-cool $pink;
-		outline: none;
+		outline: 2px dashed $pink;
 	}
 
 	&.full {
