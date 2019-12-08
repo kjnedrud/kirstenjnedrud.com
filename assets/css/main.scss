@@ -7,6 +7,10 @@
 $base-size: 16px;
 $line-height: 1.5;
 
+$content-width: $base-size * 40;
+$extended-width: $content-width * 1.5;
+$grid-gap: 30px;
+
 // fonts
 $sans: "Open Sans", Helvetica, Arial, sans-serif;
 $slab: "Bitter", serif;
@@ -70,11 +74,18 @@ html {
 	font-family: $sans;
 	font-size: $base-size;
 	line-height: $line-height;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 body {
 	background: $grey-eggshell;
 	color: $grey-darker;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
 }
 
 
@@ -131,6 +142,10 @@ p, ul, ol {
 
 p {
 
+}
+
+.description {
+	font-style: italic;
 }
 
 /**
@@ -224,12 +239,12 @@ h6 {
  */
 
 ul, ol, dl {
-	padding-left: 2em;
+	padding-left: 1.5em;
 }
 
 li {
-	margin-bottom: 0.5em;
-	margin-top: 0.5em;
+	margin-bottom: 0.25em;
+	margin-top: 0.25em;
 }
 
 .list-plain {
@@ -342,14 +357,27 @@ li {
 .container {
 	box-sizing: border-box;
 	margin: 0 auto;
-	padding: 0 1em;
+	padding: 0;
 	max-width: 100%;
-	width: 960px;
+	width: $content-width;
+}
 
-	// smaller width to prevent line lengths from getting too long
-	&.content-width {
-		width: $base-size * 40;
-	}
+// break out of container and bleed to edges of window
+.bleed-full {
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+}
+
+body {
+	@extend .bleed-full;
+}
+
+.content-width {
+	width: $content-width;
+}
+
+.extended-width {
+	width: $extended-width;
 }
 
 .site-main {
@@ -439,6 +467,41 @@ li {
 /**
  * todo: grid/columns
  */
+
+/**
+ * Projects
+ */
+.project {
+	border-bottom: 2px solid $grey-light;
+	display: grid;
+	grid-gap: 0;
+	grid-template-columns: repeat(2, 1fr);
+	margin-top: 3em;
+	padding-bottom: 3em;
+
+	&:last-child {
+		border-bottom: 0;
+		padding-bottom: 0;
+	}
+
+	.preview {
+		display: block;
+
+		img {
+			box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+			display: block;
+		}
+	}
+
+	.info {
+		padding: 1.5em;
+	}
+}
+
+.project-link {
+	font-family: $slab;
+	font-style: italic;
+}
 
 
 /**
@@ -594,8 +657,7 @@ a.button, button, input[type=submit], input[type=button] {
  */
 
 .hero {
-	padding: 6em 0;
-	text-align: center;
+	padding: 6em 2em;
 }
 
 
@@ -608,8 +670,8 @@ a.button, button, input[type=submit], input[type=button] {
  */
 
 .site-footer {
-	font-size: 0.75 * $base-size;
-	padding: 1em 0;
+	font-size: 0.75em;
+	padding: 1em (2em / 0.75);
 	text-align: center;
 }
 
@@ -625,17 +687,23 @@ a.button, button, input[type=submit], input[type=button] {
 @media screen and (min-width: 1025px) {
 
 	$base-size: 18px;
+	$content-width: $base-size * 40;
+	$extended-width: $content-width * 1.5;
 
 	body {
 		font-size: $base-size;
 	}
 
-	.container.content-width {
-		width: $base-size * 40;
+	.container, .content-width {
+		width: $content-width;
+	}
+
+	.extended-width {
+		width: $extended-width;
 	}
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
 
 	h1 {
 		font-size: 2.125em;
@@ -650,13 +718,27 @@ a.button, button, input[type=submit], input[type=button] {
 	}
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 599px) {
+
+	.project {
+		display: block;
+		padding-left: 1.5em;
+		padding-right: 1.5em;
+
+		.info {
+			margin-top: 1.5em;
+			padding: 0;
+		}
+	}
+}
+
+@media screen and (max-width: 479px) {
 
 	%button {
 		width: 100%;
 	}
 
 	.hero {
-		padding: 4em 0;
+		padding: 4em 2em;
 	}
 }

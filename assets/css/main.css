@@ -19,11 +19,18 @@ html {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 body {
   background: #f1f1f1;
   color: #333;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
 }
 
 /**
@@ -69,6 +76,10 @@ p:last-child, ul:last-child, ol:last-child {
 p, ul, ol {
   margin-bottom: 1em;
   margin-top: 1em;
+}
+
+.description {
+  font-style: italic;
 }
 
 /**
@@ -128,12 +139,12 @@ h6, .h6 {
  * Lists
  */
 ul, ol, dl {
-  padding-left: 2em;
+  padding-left: 1.5em;
 }
 
 li {
-  margin-bottom: 0.5em;
-  margin-top: 0.5em;
+  margin-bottom: 0.25em;
+  margin-top: 0.25em;
 }
 
 .list-plain {
@@ -226,12 +237,22 @@ li {
 .container {
   box-sizing: border-box;
   margin: 0 auto;
-  padding: 0 1em;
+  padding: 0;
   max-width: 100%;
-  width: 960px;
-}
-.container.content-width {
   width: 640px;
+}
+
+.bleed-full, body {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.content-width {
+  width: 640px;
+}
+
+.extended-width {
+  width: 960px;
 }
 
 /**
@@ -342,6 +363,37 @@ li {
 /**
  * todo: grid/columns
  */
+/**
+ * Projects
+ */
+.project {
+  border-bottom: 2px solid #ccc;
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 3em;
+  padding-bottom: 3em;
+}
+.project:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.project .preview {
+  display: block;
+}
+.project .preview img {
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  display: block;
+}
+.project .info {
+  padding: 1.5em;
+}
+
+.project-link {
+  font-family: "Bitter", serif;
+  font-style: italic;
+}
+
 /**
  **********************************************************
  *
@@ -468,8 +520,7 @@ a[readonly].button, button[readonly], input[readonly][type=submit], input[readon
  **********************************************************
  */
 .hero {
-  padding: 6em 0;
-  text-align: center;
+  padding: 6em 2em;
 }
 
 /**
@@ -480,8 +531,8 @@ a[readonly].button, button[readonly], input[readonly][type=submit], input[readon
  **********************************************************
  */
 .site-footer {
-  font-size: 12px;
-  padding: 1em 0;
+  font-size: 0.75em;
+  padding: 1em 2.6666666667em;
   text-align: center;
 }
 
@@ -497,11 +548,15 @@ a[readonly].button, button[readonly], input[readonly][type=submit], input[readon
     font-size: 18px;
   }
 
-  .container.content-width {
+  .container, .content-width {
     width: 720px;
   }
+
+  .extended-width {
+    width: 1080px;
+  }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   h1, .h1 {
     font-size: 2.125em;
   }
@@ -514,13 +569,24 @@ a[readonly].button, button[readonly], input[readonly][type=submit], input[readon
     font-size: 1em;
   }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 599px) {
+  .project {
+    display: block;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+  .project .info {
+    margin-top: 1.5em;
+    padding: 0;
+  }
+}
+@media screen and (max-width: 479px) {
   a.button, button, input[type=submit], input[type=button] {
     width: 100%;
   }
 
   .hero {
-    padding: 4em 0;
+    padding: 4em 2em;
   }
 }
 
