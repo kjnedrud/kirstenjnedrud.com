@@ -56,12 +56,12 @@ a {
   transition: 300ms;
 }
 a:focus, a:hover {
-  color: #56176a;
+  color: #932b82;
 }
 a:focus {
   border-radius: 0;
   outline: none;
-  border-bottom: 2px dashed #c06;
+  border-bottom: 2px dashed #0cafab;
 }
 
 h1:first-child, .h1:first-child, h2:first-child, .h2:first-child, h3:first-child, .h3:first-child, h4:first-child, .h4:first-child, h5:first-child, .h5:first-child, h6:first-child, .h6:first-child,
@@ -460,7 +460,7 @@ textarea {
  */
 a.button, button, input[type=submit], input[type=button] {
   background-color: #0e9ac8;
-  background-image: linear-gradient(135deg, #0cafab 0%, #0cafab 50%, #0e9ac8 50%, #0e9ac8 100%);
+  background-image: linear-gradient(135deg, #932b82 0%, #932b82 50%, #0e9ac8 50%, #0e9ac8 100%);
   background-size: 300% 100%;
   background-position: 100% 50%;
   transition: background 600ms;
@@ -486,16 +486,16 @@ a.button, button, input[type=submit], input[type=button] {
   transition: 600ms, outline 300ms;
 }
 a.button:focus, button:focus, input[type=submit]:focus, input[type=button]:focus, a.button:hover, button:hover, input[type=submit]:hover, input[type=button]:hover {
-  background-color: #0cafab;
+  background-color: #932b82;
   background-position: 0% 50%;
 }
 a.button:focus, button:focus, input[type=submit]:focus, input[type=button]:focus, a.button:hover, button:hover, input[type=submit]:hover, input[type=button]:hover {
-  background-color: #56176a;
+  background-color: #932b82;
   box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
   text-decoration: none;
 }
 a.button:focus, button:focus, input[type=submit]:focus, input[type=button]:focus {
-  outline: 2px dashed #c06;
+  outline: 2px dashed #0cafab;
 }
 a.full.button, button.full, input.full[type=submit], input.full[type=button] {
   width: 100%;
@@ -512,6 +512,52 @@ a[readonly].button, button[readonly], input[readonly][type=submit], input[readon
  *
  **********************************************************
  */
+.site-header {
+  background: #161331;
+  left: 0;
+  line-height: 1;
+  opacity: 0.75;
+  padding: 0.325em 0.75em;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: opacity 300ms;
+}
+.site-header:focus-within, .site-header:hover {
+  opacity: 1;
+}
+.site-header a {
+  color: #fff;
+  text-decoration: none;
+}
+.site-header a:focus, .site-header a:hover {
+  color: #0cafab;
+  text-decoration: underline;
+}
+.site-header a:focus {
+  border-bottom-color: #932b82;
+}
+.site-header .home-link {
+  display: block;
+  font-family: "Bitter", serif;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1;
+  margin-right: 0.5em;
+  padding: 4px 0 2px 0;
+}
+
+.site-nav a {
+  display: inline-block;
+  font-size: 0.75em;
+  margin: 0 0.75em -4px 0.75em;
+  padding: 4px 0 2px 0;
+  vertical-align: middle;
+}
+.site-nav a:last-child {
+  margin-right: 0;
+}
+
 /**
  **********************************************************
  *

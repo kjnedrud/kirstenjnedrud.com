@@ -3,10 +3,8 @@
  */
 
 // vars, functions, mixins
-
 $base-size: 16px;
 $line-height: 1.5;
-
 $content-width: $base-size * 40;
 $extended-width: $content-width * 1.5;
 $grid-gap: 30px;
@@ -25,11 +23,16 @@ $grey-eggshell: #f1f1f1;
 
 $purple-cool: #330d5c;
 $purple-warm: #56176a;
+$purple-medium: #690969;
+$purple-bright: #932b82;
 
 $blue: #0e9ac8;
 $blue-bright: $blue;
 $blue-medium: #00769c;
-$aqua: #0cafab;
+$blue-midnight: #161331;
+
+$aqua-bright: #0cafab;
+$aqua-medium: #179693;
 
 $yellow: #ffd877;
 $pink: #c06;
@@ -37,6 +40,7 @@ $pink: #c06;
 // paths
 $img-dir: '../img';
 
+// get image url with a relative path
 @function img($img, $path: $img-dir) {
 	@return url('#{$path}/#{$img}');
 }
@@ -113,13 +117,13 @@ a {
 	transition: 300ms;
 
 	&:focus, &:hover {
-		color: $purple-warm;
+		color: $purple-bright;
 	}
 
 	&:focus {
 		border-radius: 0;
 		outline: none;
-		border-bottom: 2px dashed $pink;
+		border-bottom: 2px dashed $aqua-bright;
 	}
 }
 
@@ -330,7 +334,7 @@ li {
 }
 
 .aqua {
-	background: $aqua;
+	background: $aqua-bright;
 }
 
 .grey-lighter {
@@ -551,7 +555,7 @@ label {
 	}
 
 	&:focus, &.invalid:focus {
-		border-color: $aqua;
+		border-color: $aqua-bright;
 		box-shadow: inset 2px 2px 4px rgba(#000, 0.3);
 		outline: none;
 	}
@@ -586,7 +590,7 @@ textarea {
  */
 
 %button {
-	@include diagonal-swipe($blue, $aqua);
+	@include diagonal-swipe($blue, $purple-bright);
 	background-color: $blue;
 	border: 0;
 	border-radius: 0;
@@ -609,13 +613,13 @@ textarea {
 	transition: 600ms, outline 300ms;
 
 	&:focus, &:hover {
-		background-color: $purple-warm;
+		background-color: $purple-bright;
 		box-shadow: 4px 4px 6px rgba(#000, 0.3);
 		text-decoration: none;
 	}
 
 	&:focus {
-		outline: 2px dashed $pink;
+		outline: 2px dashed $aqua-bright;
 	}
 
 	&.full {
@@ -642,9 +646,60 @@ a.button, button, input[type=submit], input[type=button] {
  **********************************************************
  */
 
-// todo
-.site-header, .site-header.dark {
-	// padding: 0.5em 0;
+.site-header {
+	background: $blue-midnight;
+	left: 0;
+	line-height: 1;
+	opacity: 0.75;
+	padding: 0.325em 0.75em;
+	position: absolute;
+	right: 0;
+	top: 0;
+	transition: opacity 300ms;
+
+	&:focus-within,
+	&:hover {
+		opacity: 1;
+	}
+
+	a {
+		color: #fff;
+		text-decoration: none;
+
+		&:focus, &:hover {
+			color: $aqua-bright;
+			text-decoration: underline;
+		}
+
+		&:focus {
+			border-bottom-color: $purple-bright;
+		}
+	}
+
+	.home-link {
+		display: block;
+		font-family: $slab;
+		font-size: 1rem;
+		font-weight: normal;
+		line-height: 1;
+		margin-right: 0.5em;
+		padding: 4px 0 2px 0;
+	}
+}
+
+.site-nav {
+
+	a {
+		display: inline-block;
+		font-size: 0.75em;
+		margin: 0 0.75em -4px 0.75em;
+		padding: 4px 0 2px 0;
+		vertical-align: middle;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
 }
 
 

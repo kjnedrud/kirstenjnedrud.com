@@ -1,4 +1,16 @@
-<?php require_once('includes/header.php'); ?>
+<?php
+/**
+ * Home
+ */
+require_once('includes/header.php');
+?>
+
+<div class="hero purple-cool text-center">
+	<div class="container">
+		<h1>I solve problems with technology and&nbsp;design.</h1>
+		<p><a href="#contact" class="button">Let's Chat!</a>
+	</div>
+</div><!-- .hero -->
 
 <main class="site-main">
 

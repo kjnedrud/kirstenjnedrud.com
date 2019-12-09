@@ -30,23 +30,15 @@ require_once('includes/helpers.php');
 
 <body>
 
-<header class="site-header purple-warm text-center">
+<header class="site-header text-center">
 
-	<!-- todo: add nav once we have more pages -->
-	<!-- <div class="container">
-		<a href="/" title="Kirsten J. Nedrud">Kirsten J. Nedrud</a>
-		<nav class="site-nav"></nav>
-	</div> -->
-
-	<div class="hero purple-cool">
-
-		<div class="container content-width">
-
-			<h1>I solve problems with technology and design.</h1>
-
-			<p><a href="#contact" class="button">Let's Chat!</a>
-		</div>
-	</div><!-- .hero -->
+	<div class="container clearfix">
+		<a href="/" title="Kirsten J. Nedrud" class="home-link f-left">Kirsten J. Nedrud</a>
+		<nav class="site-nav f-right">
+			<a href="#projects">Projects</a>
+			<a href="#contact">Contact</a>
+		</nav>
+	</div>
 
 </header><!-- .site-header -->
 
