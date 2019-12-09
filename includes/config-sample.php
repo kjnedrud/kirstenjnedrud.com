@@ -7,15 +7,11 @@
 date_default_timezone_set('America/New_York');
 
 // environment: local, dev, or prod
-define(ENV, '');
-
-// contact
-define(CONTACT_EMAIL, '');
-define(CONTACT_PHONE, '');
+define('ENV', '');
 
 // sendgrid
-define(SENDGRID_API_KEY, '');
-define(SENDGRID_URL, 'https://api.sendgrid.com/');
+define('SENDGRID_API_KEY', '');
+define('SENDGRID_URL', 'https://api.sendgrid.com/');
 
 // google analytics
-define(GOOGLE_ANALYTICS_ID, '');
+define('GOOGLE_ANALYTICS_ID', '');

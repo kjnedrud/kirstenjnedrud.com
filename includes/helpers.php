@@ -20,14 +20,10 @@ function get_asset($asset, $echo = true) {
 	}
 
 	if ($echo) {
-		echo $asset_with_timestamp ? $asset_with_timestamp : $asset;
-		// todo: upgrade server to php7 so we can use this
-		// echo $asset_with_timestamp ?? $asset;
+		echo $asset_with_timestamp ?? $asset;
 	}
 	else {
-		return $asset_with_timestamp ? $asset_with_timestamp : $asset;
-		// todo: upgrade server to php7 so we can use this
-		// return $asset_with_timestamp ?? $asset;
+		return $asset_with_timestamp ?? $asset;
 	}
 }
 

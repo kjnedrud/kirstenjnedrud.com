@@ -36,13 +36,13 @@ if (!empty($errors)) {
 
 // set up email
 $params = array(
-	'to'        => 'kjnedrud@gmail.com',
-	'toname'    => 'Kirsten J. Nedrud',
-	'from'      => 'noreply@kirstenjnedrud.com',
-	'fromname'      => $data['email'],
-	'replyto'      => $data['email'],
-	'subject'   => 'New contact message from: ' . $data['email'],
-	'text'      => $data['message'],
+	'to' => 'kjnedrud@gmail.com',
+	'toname' => 'Kirsten J. Nedrud',
+	'from' => 'noreply@kirstenjnedrud.com',
+	'fromname' => $data['email'],
+	'replyto' => $data['email'],
+	'subject' => 'New contact message from: ' . $data['email'],
+	'text' => $data['message'],
 );
 
 $request = SENDGRID_URL . 'api/mail.send.json';
