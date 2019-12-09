@@ -23,7 +23,7 @@ require_once('includes/helpers.php');
 			window.dataLayer = window.dataLayer || [];
 			function gtag(){dataLayer.push(arguments);}
 			gtag('js', new Date());
-			gtag('config', <?php echo GOOGLE_ANALYTICS_ID; ?>);
+			gtag('config', '<?php echo GOOGLE_ANALYTICS_ID; ?>');
 		</script>
 	<?php endif; ?>
 </head>
