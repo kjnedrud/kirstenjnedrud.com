@@ -618,8 +618,8 @@ a[readonly].button, button[readonly], input[readonly][type=submit], input[readon
 @media screen and (max-width: 599px) {
   .project {
     display: block;
-    padding-left: 1.5em;
-    padding-right: 1.5em;
+    padding-left: 0;
+    padding-right: 0;
   }
   .project .info {
     margin-top: 1.5em;

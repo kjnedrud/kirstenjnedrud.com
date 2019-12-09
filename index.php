@@ -5,14 +5,15 @@
 require_once('includes/header.php');
 ?>
 
-<div class="hero purple-cool text-center">
-	<div class="container">
-		<h1>I solve problems with technology and&nbsp;design.</h1>
-		<p><a href="#contact" class="button">Let's Chat!</a>
-	</div>
-</div><!-- .hero -->
-
 <main class="site-main">
+
+	<!-- hero -->
+	<header class="hero purple-cool text-center">
+		<div class="container">
+			<h1>I solve problems with technology and&nbsp;design.</h1>
+			<p><a href="#contact" class="button">Let's Chat!</a>
+		</div>
+	</header><!-- .hero -->
 
 	<!-- intro -->
 	<section class="pad-y-3 pad-x-2 grey-eggshell">
@@ -20,8 +21,8 @@ require_once('includes/header.php');
 		<div class="container">
 
 			<div class="title-group">
-				<h2 class="h1">Hi, I'm Kirsten</h1>
-				<h3 class="h2">Web Developer &amp; Creative Technologist</h2>
+				<h1>Hi, I'm Kirsten</h1>
+				<h2 class="h2">Web Developer &amp; Creative Technologist</h2>
 			</div>
 
 			<p>I'm a web developer with a background in design. I love the web because it's so easy for anyone to make something and share it online; I'm always excited to see what extraordinary, beautiful, weird things people are making.</p>
@@ -110,6 +111,7 @@ require_once('includes/header.php');
 			[
 				'title' => 'Ingredi.js',
 				'image' => 'ingredi.jpg',
+				'alt' => 'Screenshot of JavaScript code',
 				'description' => '<p class="description">In-progress JavaScript library for converting recipe ingredients</p>
 					<ul>
 						<li>uses RegEx to parse amounts and units from ingredient strings</li>
