@@ -15,6 +15,7 @@ require_once('includes/helpers.php');
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no">
 	<link href="//fonts.googleapis.com/css?family=Bitter:400,700,400italic|Open+Sans:400,400i,700,700i" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" href="<?php get_asset('/assets/css/main.css'); ?>">
+	<link rel="icon" type="image/png" href="<?php get_asset('/assets/img/favicon.png'); ?>">
 	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 	<?php if (ENV == 'prod') : ?>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
