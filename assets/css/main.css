@@ -255,6 +255,10 @@ li {
   width: 960px;
 }
 
+.site-header.fixed ~ .site-main {
+  padding-top: calc(1.65rem + 8px);
+}
+
 /**
  * Margin
  */
@@ -513,17 +517,26 @@ a[readonly].button, button[readonly], input[readonly][type=submit], input[readon
  **********************************************************
  */
 .site-header {
-  background: #161331;
+  background: #1d123c;
   left: 0;
   line-height: 1;
-  opacity: 0.75;
   padding: 0.325em 0.75em;
   position: absolute;
   right: 0;
   top: 0;
+  transition: background 300ms;
+}
+.site-header.fixed {
+  position: fixed;
+}
+.site-header .container {
+  opacity: 0.75;
   transition: opacity 300ms;
 }
 .site-header:focus-within, .site-header:hover {
+  background: #161331;
+}
+.site-header:focus-within .container, .site-header:hover .container {
   opacity: 1;
 }
 .site-header a {
@@ -550,7 +563,8 @@ a[readonly].button, button[readonly], input[readonly][type=submit], input[readon
 .site-nav a {
   display: inline-block;
   font-size: 0.75em;
-  margin: 0 0.75em -4px 0.75em;
+  line-height: 1rem;
+  margin: 0 0.75em;
   padding: 4px 0 2px 0;
   vertical-align: middle;
 }
@@ -567,6 +581,9 @@ a[readonly].button, button[readonly], input[readonly][type=submit], input[readon
  */
 .hero {
   padding: 6em 2em;
+}
+.hero h1:first-child, .hero .h1:first-child {
+  margin-top: -0.1em;
 }
 
 /**

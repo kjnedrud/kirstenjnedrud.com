@@ -31,10 +31,10 @@ require_once('includes/helpers.php');
 
 <body>
 
-<header class="site-header text-center">
+<header class="site-header text-center fixed">
 
 	<div class="container clearfix">
-		<a href="/" title="Kirsten J. Nedrud" class="home-link f-left">Kirsten J. Nedrud</a>
+		<a href="#top" title="Kirsten J. Nedrud" class="home-link f-left">Kirsten J. Nedrud</a>
 		<nav class="site-nav f-right">
 			<a href="#projects">Projects</a>
 			<a href="#contact">Contact</a>
