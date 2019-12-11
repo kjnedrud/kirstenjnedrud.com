@@ -45,18 +45,24 @@ function get_responsive_image($image, $dimensions, $echo = true) {
 
 /**
  * Get html for a project
- * @param  [array] $project : associative array of project info
+ * @param  [array] $options : associative array of project info
  * @param  [boolean] $echo
  * @return [string]
  */
-function get_project_html($project, $echo = true) {
+function get_project_html($options, $echo = true) {
+
+	$defaults = [
+		'type' => 'primary',
+	];
+	$project = array_merge($defaults, $options);
+	$template = "project-{$project['type']}.php";
 
 	if ($echo) {
-		include('project.php');
+		include($template);
 	}
 	else {
 		ob_start();
-		include('project.php');
+		include($template);
 		return ob_get_clean();
 	}
 }

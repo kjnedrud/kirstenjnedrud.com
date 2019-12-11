@@ -37,6 +37,10 @@ $aqua-medium: #179693;
 $yellow: #ffd877;
 $pink: #c06;
 
+// symbols
+$nbsp: '\00a0';
+$raquo: '\00bb';
+
 // paths
 $img-dir: '../img';
 
@@ -360,7 +364,8 @@ li {
 
 .container {
 	box-sizing: border-box;
-	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
 	padding: 0;
 	max-width: 100%;
 	width: $content-width;
@@ -475,20 +480,45 @@ body {
  * todo: grid/columns
  */
 
+.grid-cols {
+	display: grid;
+	grid-gap: $grid-gap;
+
+	&.grid-3 {
+		grid-template-columns: repeat(3, 1fr)
+	}
+
+	// todo: loop for other column counts/sizes
+}
+
 /**
  * Projects
  */
 .project {
-	border-bottom: 2px solid $grey-light;
-	display: grid;
-	grid-gap: 0;
-	grid-template-columns: repeat(2, 1fr);
-	margin-top: 3em;
-	padding-bottom: 3em;
 
-	&:last-child {
-		border-bottom: 0;
-		padding-bottom: 0;
+	&.primary {
+		border-bottom: 2px solid $grey-light;
+		display: grid;
+		grid-gap: 0;
+		grid-template-columns: repeat(2, 1fr);
+		margin-top: 3em;
+		padding-bottom: 3em;
+
+		&:last-child {
+			border-bottom: 0;
+			padding-bottom: 0;
+		}
+
+		.info {
+			padding: 1.5em;
+		}
+	}
+
+	&.secondary {
+
+		.info {
+			margin-top: 1em;
+		}
 	}
 
 	.preview {
@@ -497,17 +527,18 @@ body {
 		img {
 			box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
 			display: block;
+			width: 100%;
 		}
-	}
-
-	.info {
-		padding: 1.5em;
 	}
 }
 
 .project-link {
 	font-family: $slab;
 	font-style: italic;
+
+	&:after {
+		content: '#{$nbsp}#{$raquo}';
+	}
 }
 
 
@@ -793,17 +824,39 @@ a.button, button, input[type=submit], input[type=button] {
 	}
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 649px) {
+
+	.container, .content-width {
+		width: 420px;
+	}
 
 	.project {
-		display: block;
-		padding-left: 0;
-		padding-right: 0;
 
-		.info {
-			margin-top: 1.5em;
-			padding: 0;
+		&.primary {
+			display: block;
+			padding-left: 0;
+			padding-right: 0;
+
+			.info {
+				margin-top: 1.5em;
+				padding: 0;
+			}
 		}
+
+		&.secondary {
+			border-bottom: 2px solid #ccc;
+			margin-top: 3em;
+			padding-bottom: 3em;
+
+			&:last-child {
+				border-bottom: 0;
+				padding-bottom: 0;
+			}
+		}
+	}
+
+	.sm-grid-full {
+		display: block;
 	}
 }
 

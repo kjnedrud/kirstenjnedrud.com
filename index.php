@@ -51,7 +51,7 @@ require_once('includes/header.php');
 						<li>built dynamic contact form and integrations with the SendGrid API and Acuity Scheduling software</li>
 					</ul>
 					<p>
-						<a href="https://www.printwithbanjo.com/" target="_blank" class="project-link">Visit Site &raquo;</a>
+						<a href="https://www.printwithbanjo.com/" target="_blank" class="project-link">Visit Site</a>
 					</p>',
 			],
 			[
@@ -63,7 +63,7 @@ require_once('includes/header.php');
 						<li>built contact form with SendGrid API integration</li>
 					</ul>
 					<p>
-						<a href="https://www.economicarchitectureproject.org/" target="_blank" class="project-link">Visit Site &raquo;</a>
+						<a href="https://www.economicarchitectureproject.org/" target="_blank" class="project-link">Visit Site</a>
 					</p>',
 			],
 			[
@@ -76,7 +76,7 @@ require_once('includes/header.php');
 						<li>built secure payment site with Authorize.net API integration</li>
 					</ul>
 					<p>
-						<a href="https://www.morevang.com/" target="_blank" class="project-link">Visit Site &raquo;</a>
+						<a href="https://www.morevang.com/" target="_blank" class="project-link">Visit Site</a>
 					</p>',
 			],
 			[
@@ -88,7 +88,7 @@ require_once('includes/header.php');
 						<li>built responsive templates based on initial designs</li>
 					</ul>
 					<p>
-						<a href="https://www.musichonors.com/" target="_blank" class="project-link">Visit Site &raquo;</a>
+						<a href="https://www.musichonors.com/" target="_blank" class="project-link">Visit Site</a>
 					</p>',
 			],
 		],
@@ -96,30 +96,53 @@ require_once('includes/header.php');
 			[
 				'title' => 'Kaleidocamera',
 				'image' => 'kaleidocamera.jpg',
-				'description' => '<p class="description">Browser-based kaleidoscope with HTML canvas</p>
+				'description' => '<p class="description">Browser-based kaleidoscope with HTML canvas.</p>
 					<ul>
 						<li>captures device camera with getUserMedia()</li>
 						<li>performs triangle math calculations to reflect segments around a center point</li>
 						<li>integrates with Imgur API to save images</li>
 					</ul>
 					<p>
-						<a href="https://kaleidocamera.com" target="_blank" class="project-link">Visit Site &raquo;</a>
+						<a href="https://kaleidocamera.com" target="_blank" class="project-link">Visit Site</a>
 						<br>
-						<a href="https://github.com/kjnedrud/kaleidocamera" target="_blank" class="project-link">Code on GitHub &raquo;</a>
+						<a href="https://github.com/kjnedrud/kaleidocamera" target="_blank" class="project-link">Code on GitHub</a>
 					</p>',
 			],
 			[
 				'title' => 'Ingredi.js',
 				'image' => 'ingredi.jpg',
 				'alt' => 'Screenshot of JavaScript code',
-				'description' => '<p class="description">In-progress JavaScript library for converting recipe ingredients</p>
+				'description' => '<p class="description">In-progress JavaScript library for converting recipe ingredients.</p>
 					<ul>
 						<li>uses RegEx to parse amounts and units from ingredient strings</li>
 						<li>multiplies amounts and converts common units</li>
 					</ul>
 					<p>
-						<a href="https://github.com/kjnedrud/ingredi" target="_blank" class="project-link">Code on GitHub &raquo;</a>
+						<a href="https://github.com/kjnedrud/ingredi" target="_blank" class="project-link">Code on GitHub</a>
 					</p>',
+			],
+		],
+		'codepen' => [
+			[
+				'title' => 'Cashflow Prototype',
+				'image' => 'cashflow.png',
+				'description' => '<p class="description">Design and animation concept to visualize cashflow data in a financial planning app.</p>
+					<p><a href="https://codepen.io/kjnedrud/full/vYELEOR" target="_blank" class="project-link">Demo on Codepen</a></p>',
+				'type' => 'secondary',
+			],
+			[
+				'title' => 'Line &amp; Dot Animation',
+				'image' => 'complicated-organized.png',
+				'description' => '<p class="description">SVG animation to illustrate the idea of transforming a complicated problem into an organized solution.</p>
+					<p><a href="https://codepen.io/kjnedrud/full/YzPwPvJ" target="_blank" class="project-link">Demo on Codepen</a></p>',
+				'type' => 'secondary',
+			],
+			[
+				'title' => 'Typing Animation',
+				'image' => 'typing.gif',
+				'description' => '<p class="description">Prototype of a website hero that rotates through different phrases with a typing animation.</p>
+					<p><a href="https://codepen.io/kjnedrud/full/dyPGPNd" target="_blank" class="project-link">Demo on Codepen</a></p>',
+				'type' => 'secondary',
 			],
 		],
 	]; ?>
@@ -127,25 +150,39 @@ require_once('includes/header.php');
 	<section class="pad-y-3 pad-x-2 grey-eggshell">
 		<div class="container">
 			<header class="title-group text-center">
-				<h2>Professional Work</h2>
-				<p class="description">Some notable projects I've worked on over the years.</p>
+				<h2>Personal Projects</h2>
+				<p class="description">Things I've made in my spare time for fun or practical use.</p>
 			</header>
 			<div class="bleed-full pad-x-2">
-				<?php foreach($projects['work'] as $project) : ?>
+				<?php foreach($projects['personal'] as $project) : ?>
 					<?php get_project_html($project); ?>
 				<?php endforeach; ?>
 			</div><!-- .lg-bleed-full -->
 		</div><!-- .container -->
 	</section>
 
+	<section class="pad-y-3 pad-x-2 grey-lighter">
+		<div class="container extended-width">
+			<header class="title-group container text-center">
+				<h2>Experiments &amp; Prototypes</h2>
+				<p class="description">Code snippets for demos, testing, and proof-of-concept.</p>
+			</header>
+			<div class="grid-cols grid-3 sm-grid-full">
+				<?php foreach($projects['codepen'] as $project) : ?>
+					<?php get_project_html($project); ?>
+				<?php endforeach; ?>
+			</div><!-- .grid-cols -->
+		</div><!-- .container -->
+	</section>
+
 	<section class="pad-y-3 pad-x-2 white">
 		<div class="container">
 			<header class="title-group text-center">
-				<h2>Personal Projects</h2>
-				<p class="description">Things I've made in my spare time for fun or practical use.</p>
+				<h2>Professional Work</h2>
+				<p class="description">Some notable projects I've worked on over the years.</p>
 			</header>
 			<div class="bleed-full pad-x-2">
-				<?php foreach($projects['personal'] as $project) : ?>
+				<?php foreach($projects['work'] as $project) : ?>
 					<?php get_project_html($project); ?>
 				<?php endforeach; ?>
 			</div><!-- .lg-bleed-full -->
