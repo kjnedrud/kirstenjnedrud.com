@@ -393,10 +393,10 @@ li {
   padding-bottom: 0;
 }
 .project.primary .info {
-  padding: 1.5em;
+  padding: 1.5em 0 0 1.5em;
 }
 .project.secondary .info {
-  margin-top: 1em;
+  margin-top: 1.5em;
 }
 .project .preview {
   display: block;
