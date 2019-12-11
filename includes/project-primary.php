@@ -6,15 +6,19 @@
 ?>
 
 <?php if (!empty($project)) : ?>
-	<article class="container extended-width project primary">
+	<article class="project <?php echo ($project['type'] == 'secondary') ? 'grid-item secondary' : 'container extended-width primary'; ?>">
 
 		<picture class="preview">
-			<!-- square -->
-			<source media="(min-width: 650px) and (max-width:767px)" srcset="<?php get_responsive_image($project['image'], '600x600'); ?>">
-			<!-- rect -->
-			<source srcset="<?php get_responsive_image($project['image'], '540x405'); ?> 1x, <?php get_responsive_image($project['image'], '1080x810'); ?> 2x">
-			<!-- fallback img -->
-			<img src="<?php get_responsive_image($project['image'], '540x405'); ?>" srcset="<?php get_responsive_image($project['image'], '540x405'); ?> 1x, <?php get_responsive_image($project['image'], '1080x810'); ?> 2x" class="thumb" alt="<?php echo empty($project['alt']) ? "Screenshot of {$project['title']} website" : "{$project['alt']}"; ?>">
+			<?php if ($project['type'] == 'secondary') : ?>
+				<img src="<?php get_responsive_image($project['image'], '340x255'); ?>" srcset="<?php get_responsive_image($project['image'], '340x255'); ?> 1x, <?php get_responsive_image($project['image'], '680x510'); ?> 2x" alt="<?php echo empty($project['alt']) ? "Screenshot of {$project['title']}" : "{$project['alt']}"; ?>">
+			<?php else : ?>
+				<!-- square -->
+				<source media="(min-width: 650px) and (max-width:767px)" srcset="<?php get_responsive_image($project['image'], '600x600'); ?>">
+				<!-- rect -->
+				<source srcset="<?php get_responsive_image($project['image'], '540x405'); ?> 1x, <?php get_responsive_image($project['image'], '1080x810'); ?> 2x">
+				<!-- fallback img -->
+				<img src="<?php get_responsive_image($project['image'], '540x405'); ?>" srcset="<?php get_responsive_image($project['image'], '540x405'); ?> 1x, <?php get_responsive_image($project['image'], '1080x810'); ?> 2x" class="thumb" alt="<?php echo empty($project['alt']) ? "Screenshot of {$project['title']} website" : "{$project['alt']}"; ?>">
+			<?php endif; ?>
 		</picture>
 
 		<div class="info">
@@ -28,6 +32,7 @@
 					<?php endforeach; ?>
 				</p>
 			<?php endif; ?>
-		</div>
+		</div><!-- .info -->
+
 	</article><!-- .project -->
 <?php endif; ?>
