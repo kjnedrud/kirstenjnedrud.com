@@ -22,12 +22,12 @@ require_once('includes/header.php');
 
 			<div class="title-group">
 				<h1>Hi, I'm Kirsten</h1>
-				<h2 class="h2">Web Developer &amp; Creative Technologist</h2>
+				<h2>Web Developer &amp; Creative Technologist</h2>
 			</div>
 
-			<p>I'm a web developer with a background in design. I love the web because it's so easy for anyone to make something and share it online; I'm always excited to see what extraordinary, beautiful, weird things people are making.</p>
+			<p>I'm a web developer with a background in design. I love the web because it's so easy for anyone to make something and share it online; I'm always excited to see what extraordinary, beautiful, weird things people are making!</p>
 
-			<p>I live and work in the DC area, making websites and software for the internet.</p>
+			<p>I live and work in the DC area, making websites and software for the internet. In my free time, you can often find me bouldering at the local climbing gym, sampling craft beers, or workin' on my night cheese.</p>
 
 		</div><!-- .container -->
 
