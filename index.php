@@ -49,10 +49,13 @@ require_once('includes/header.php');
 						<li>developed custom WordPress site</li>
 						<li>created custom Gutenberg blocks using Advanced Custom Fields</li>
 						<li>built dynamic contact form and integrations with the SendGrid API and Acuity Scheduling software</li>
-					</ul>
-					<p>
-						<a href="https://www.printwithbanjo.com/" target="_blank" class="project-link">Visit Site</a>
-					</p>',
+					</ul>',
+				'links' => [
+					[
+						'url' => 'https://www.printwithbanjo.com/',
+						'text' => 'Visit Site',
+					],
+				],
 			],
 			[
 				'title' => 'Economic Architecture Project',
@@ -61,10 +64,13 @@ require_once('includes/header.php');
 						<li>prototyped home page message animation</li>
 						<li>developed custom WordPress site</li>
 						<li>built contact form with SendGrid API integration</li>
-					</ul>
-					<p>
-						<a href="https://www.economicarchitectureproject.org/" target="_blank" class="project-link">Visit Site</a>
-					</p>',
+					</ul>',
+				'links' => [
+					[
+						'url' => 'https://www.economicarchitectureproject.org/',
+						'text' => 'Visit Site',
+					],
+				],
 			],
 			[
 				'title' => 'More Vang',
@@ -74,10 +80,13 @@ require_once('includes/header.php');
 						<li>developed custom WordPress site</li>
 						<li>integrated web uploader tool for client files</li>
 						<li>built secure payment site with Authorize.net API integration</li>
-					</ul>
-					<p>
-						<a href="https://www.morevang.com/" target="_blank" class="project-link">Visit Site</a>
-					</p>',
+					</ul>',
+				'links' => [
+					[
+						'url' => 'https://www.morevang.com/',
+						'text' => 'Visit Site',
+					],
+				],
 			],
 			[
 				'title' => 'Tri-M Music Honor Society',
@@ -86,10 +95,13 @@ require_once('includes/header.php');
 						<li>worked with team on content migration and website organization strategy</li>
 						<li>developed custom WordPress site</li>
 						<li>built responsive templates based on initial designs</li>
-					</ul>
-					<p>
-						<a href="https://www.musichonors.com/" target="_blank" class="project-link">Visit Site</a>
-					</p>',
+					</ul>',
+				'links' => [
+					[
+						'url' => 'https://www.musichonors.com/',
+						'text' => 'Visit Site',
+					],
+				],
 			],
 		],
 		'personal' => [
@@ -101,12 +113,17 @@ require_once('includes/header.php');
 						<li>captures device camera with getUserMedia()</li>
 						<li>performs triangle math calculations to reflect segments around a center point</li>
 						<li>integrates with Imgur API to save images</li>
-					</ul>
-					<p>
-						<a href="https://kaleidocamera.com" target="_blank" class="project-link">Visit Site</a>
-						<br>
-						<a href="https://github.com/kjnedrud/kaleidocamera" target="_blank" class="project-link">Code on GitHub</a>
-					</p>',
+					</ul>',
+				'links' => [
+					[
+						'url' => 'https://kaleidocamera.com',
+						'text' => 'Visit Site',
+					],
+					[
+						'url' => 'https://github.com/kjnedrud/kaleidocamera',
+						'text' => 'Code on GitHub',
+					],
+				],
 			],
 			[
 				'title' => 'Ingredi.js',
@@ -116,32 +133,50 @@ require_once('includes/header.php');
 					<ul>
 						<li>uses RegEx to parse amounts and units from ingredient strings</li>
 						<li>multiplies amounts and converts common units</li>
-					</ul>
-					<p>
-						<a href="https://github.com/kjnedrud/ingredi" target="_blank" class="project-link">Code on GitHub</a>
-					</p>',
+					</ul>',
+				'links' => [
+					[
+						'url' => 'https://github.com/kjnedrud/ingredi',
+						'text' => 'Code on GitHub',
+					],
+				],
 			],
 		],
 		'codepen' => [
 			[
 				'title' => 'Cashflow Prototype',
 				'image' => 'cashflow.png',
-				'description' => '<p class="description">Design and animation concept to visualize cashflow data in a financial planning app.</p>
-					<p><a href="https://codepen.io/kjnedrud/full/vYELEOR" target="_blank" class="project-link">Demo on Codepen</a></p>',
+				'description' => '<p class="description">Design and animation concept to visualize cashflow data in a financial planning app.</p>',
+				'links' => [
+					[
+						'url' => 'https://codepen.io/kjnedrud/full/vYELEOR',
+						'text' => 'Demo on Codepen',
+					],
+				],
 				'type' => 'secondary',
 			],
 			[
 				'title' => 'Line &amp; Dot Animation',
 				'image' => 'complicated-organized.png',
-				'description' => '<p class="description">SVG animation to illustrate the idea of transforming a complicated problem into an organized solution.</p>
-					<p><a href="https://codepen.io/kjnedrud/full/YzPwPvJ" target="_blank" class="project-link">Demo on Codepen</a></p>',
+				'description' => '<p class="description">SVG animation to illustrate the idea of transforming a complicated problem into an organized solution.</p>',
+				'links' => [
+					[
+						'url' => 'https://codepen.io/kjnedrud/full/YzPwPvJ',
+						'text' => 'Demo on Codepen',
+					],
+				],
 				'type' => 'secondary',
 			],
 			[
 				'title' => 'Typing Animation',
 				'image' => 'typing.gif',
-				'description' => '<p class="description">Prototype of a website hero that rotates through different phrases with a typing animation.</p>
-					<p><a href="https://codepen.io/kjnedrud/full/dyPGPNd" target="_blank" class="project-link">Demo on Codepen</a></p>',
+				'description' => '<p class="description">Prototype of a website hero that rotates through different phrases with a typing animation.</p>',
+				'links' => [
+					[
+						'url' => 'https://codepen.io/kjnedrud/full/dyPGPNd',
+						'text' => 'Demo on Codepen',
+					],
+				],
 				'type' => 'secondary',
 			],
 		],

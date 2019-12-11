@@ -20,6 +20,14 @@
 		<div class="info">
 			<h3><?php echo $project['title']; ?></h3>
 			<?php echo $project['description']; ?>
+			<?php if (!empty($project['links'])) : ?>
+				<p>
+					<?php foreach($project['links'] as $link_index => $link) : ?>
+						<?php echo $link_index ? '<br>' : ''; ?>
+						<a href="<?php echo $link['url']; ?>" target="_blank" class="project-link" title="<?php echo empty($link['title']) ? $link['text'] : $link['title']; ?>"><?php echo $link['text']; ?></a>
+					<?php endforeach; ?>
+				</p>
+			<?php endif; ?>
 		</div>
 	</article><!-- .project -->
 <?php endif; ?>
