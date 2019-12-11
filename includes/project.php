@@ -1,6 +1,6 @@
 <?php
 /**
- * Project template - primary
+ * Project template
  * Called by get_project_html()
  */
 ?>

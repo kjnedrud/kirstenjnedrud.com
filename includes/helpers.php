@@ -55,7 +55,7 @@ function get_project_html($options, $echo = true) {
 		'type' => 'primary',
 	];
 	$project = array_merge($defaults, $options);
-	$template = "project-primary.php";
+	$template = "project.php";
 
 	if ($echo) {
 		include($template);
