@@ -8,6 +8,7 @@
 <?php if (!empty($project)) : ?>
 	<article class="project <?php echo ($project['type'] == 'secondary') ? 'grid-item secondary' : 'container extended-width primary'; ?>">
 
+		<?php if (!empty($project['links'])) : ?><a href="<?php echo $project['links'][0]['url']; ?>" title="<?php echo $project['title']; ?>"><?php endif; ?>
 		<picture class="preview">
 			<?php if ($project['type'] == 'secondary') : ?>
 				<img src="<?php get_responsive_image($project['image'], '340x255'); ?>" srcset="<?php get_responsive_image($project['image'], '340x255'); ?> 1x, <?php get_responsive_image($project['image'], '680x510'); ?> 2x" alt="<?php echo empty($project['alt']) ? "Screenshot of {$project['title']}" : "{$project['alt']}"; ?>">
@@ -20,6 +21,7 @@
 				<img src="<?php get_responsive_image($project['image'], '540x405'); ?>" srcset="<?php get_responsive_image($project['image'], '540x405'); ?> 1x, <?php get_responsive_image($project['image'], '1080x810'); ?> 2x" class="thumb" alt="<?php echo empty($project['alt']) ? "Screenshot of {$project['title']} website" : "{$project['alt']}"; ?>">
 			<?php endif; ?>
 		</picture>
+		<?php if (!empty($project['links'])) : ?></a><?php endif; ?>
 
 		<div class="info">
 			<h3><?php echo $project['title']; ?></h3>
