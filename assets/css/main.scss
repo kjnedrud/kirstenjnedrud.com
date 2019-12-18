@@ -692,6 +692,7 @@ a.button, button, input[type=submit], input[type=button] {
 
 	&.fixed {
 		position: fixed;
+		z-index: 999;
 	}
 
 	.container {

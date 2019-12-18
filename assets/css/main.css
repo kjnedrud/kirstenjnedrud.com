@@ -545,6 +545,7 @@ a[readonly].button, button[readonly], input[readonly][type=submit], input[readon
 }
 .site-header.fixed {
   position: fixed;
+  z-index: 999;
 }
 .site-header .container {
   opacity: 0.75;
