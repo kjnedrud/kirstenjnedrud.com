@@ -23,6 +23,10 @@ if (empty($data['message'])) {
 	// $errors['message'] = 'Message cannot be blank.';
 	$errors[] = array('name' => 'message', 'message' => 'Message cannot be blank.');
 }
+// validate recaptcha token
+if (empty($data['token'])) {
+	$errors[] = array('name' => 'token', 'message' => 'Invalid recatcha token.');
+}
 
 // validation errors - allow user to fix and try again
 if (!empty($errors)) {
@@ -31,6 +35,23 @@ if (!empty($errors)) {
 		'status' => 'error',
 		'message' => 'Please fix the error(s) above.',
 		'errors' => $errors
+	));
+	die();
+}
+
+// verify recaptcha first
+$recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
+$recaptcha_params = array(
+	'secret' => RECAPTCHA_SECRET,
+	'response' => $data['token'],
+);
+$recaptcha_response_json = send_post_request($recaptcha_url, $recaptcha_params);
+$recaptcha_response = json_decode($recaptcha_response_json);
+if (!$recaptcha_response->success) {
+	// print out error json
+	echo json_encode(array(
+		'status' => 'error',
+		'message' => 'Error verifying captcha.',
 	));
 	die();
 }

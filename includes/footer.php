@@ -77,25 +77,36 @@
 		submit.setAttribute('disabled', 'disabled');
 		submit.innerHTML = 'Sending...';
 
-		// get form data
-		var data = 'email=' + encodeURIComponent(emailInput.value) + '&message=' + encodeURIComponent(messageInput.value);
+		// execute captcha and get token
+		grecaptcha.execute('<?php echo RECAPTCHA_KEY; ?>', {action: 'contact'}).then(function(token) {
 
-		// set up request
-		var action = form.getAttribute('action');
-		var method = form.getAttribute('method');
-		var request = new XMLHttpRequest();
-		request.open(method, action, true);
-		request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+			// get form data
+			var data = 'email=' + encodeURIComponent(emailInput.value) + '&message=' + encodeURIComponent(messageInput.value) + '&token=' + token;
+
+			// set up request
+			var action = form.getAttribute('action');
+			var method = form.getAttribute('method');
+			var request = new XMLHttpRequest();
+			request.open(method, action, true);
+			request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+
+			// response handler
+			request.onreadystatechange = contactResponse;
+
+			// send request with form data
+			request.send(data);
+
+		});
 
 		// response handler
-		request.onreadystatechange = function() {
-			if (request.readyState === XMLHttpRequest.DONE) {
+		var contactResponse = function() {
+			if (this.readyState === XMLHttpRequest.DONE) {
 
 				// successful request
-				if (request.status >= 200 && request.status < 400) {
+				if (this.status >= 200 && this.status < 400) {
 
 					// parse response
-					var response = JSON.parse(request.responseText);
+					var response = JSON.parse(this.responseText);
 
 					// success
 					if (response.status == 'success') {
@@ -130,9 +141,6 @@
 				form.insertAdjacentHTML('beforeend', '<p class="error">Sorry, something went wrong. You can refresh the page and try again, or email me directly at: <a href="mailto:kjnedrud@gmail.com">kjnedrud@gmail.com</a></p>');
 			}
 		};
-
-		// send request with form data
-		request.send(data);
 	}
 
 	form.addEventListener('submit', contactSubmit);
