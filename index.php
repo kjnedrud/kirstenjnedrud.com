@@ -16,7 +16,7 @@ require_once('includes/header.php');
 	</header><!-- .hero -->
 
 	<!-- intro -->
-	<section class="pad-y-3 pad-x-2 grey-eggshell">
+	<section class="pad-y-3 pad-x-2 white">
 
 		<div class="container">
 
@@ -33,7 +33,7 @@ require_once('includes/header.php');
 
 	</section>
 
-	<section class="pad-y-3 pad-x-2 white" id="projects">
+	<section class="pad-y-3 pad-x-2 grey-eggshell" id="projects">
 		<div class="container title-group">
 			<h1>What I Do</h1>
 			<p>I bridge the gap between designers and developers. I ask a lot of questions and seldom do exactly what I'm told. I believe in building a more diverse, accessible web. I focus on creating the best possible user experience, because without users the things we build have no purpose.</p>
@@ -182,7 +182,7 @@ require_once('includes/header.php');
 		],
 	]; ?>
 
-	<section class="pad-y-3 pad-x-2 grey-eggshell">
+	<section class="pad-y-3 pad-x-2 white">
 		<div class="container">
 			<header class="title-group text-center">
 				<h2>Personal Projects</h2>
@@ -196,7 +196,7 @@ require_once('includes/header.php');
 		</div><!-- .container -->
 	</section>
 
-	<section class="pad-y-3 pad-x-2 grey-lighter">
+	<section class="pad-y-3 pad-x-2 grey-eggshell">
 		<div class="container extended-width">
 			<header class="title-group container text-center">
 				<h2>Experiments &amp; Prototypes</h2>
