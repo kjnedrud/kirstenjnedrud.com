@@ -245,7 +245,11 @@ require_once('includes/header.php');
 					<textarea id="contact-message" name="message" rows="6" required></textarea>
 				</p>
 
-				<button id="contact-submit" class="f-right" type="submit">Send</button>
+				<p class="note">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.</p>
+
+				<p class="clearfix">
+					<button id="contact-submit" class="f-right" type="submit">Send</button>
+				</p>
 
 			</form><!-- #contact-form -->
 
