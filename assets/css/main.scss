@@ -267,6 +267,10 @@ li {
 	color: $grey-medium;
 	font-size: 0.75em;
 	font-style: italic;
+
+	a {
+		font-weight: normal;
+	}
 }
 
 .error {
@@ -671,6 +675,13 @@ a.button, button, input[type=submit], input[type=button] {
 	}
 }
 
+// hide captcha badge
+.grecaptcha-badge {
+	height: 0;
+	left: -9999px;
+	visibility: hidden;
+}
+
 
 /**
  **********************************************************
@@ -692,6 +703,7 @@ a.button, button, input[type=submit], input[type=button] {
 
 	&.fixed {
 		position: fixed;
+		z-index: 999;
 	}
 
 	.container {

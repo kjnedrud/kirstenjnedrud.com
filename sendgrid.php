@@ -2,6 +2,7 @@
 
 // config
 require_once('includes/config.php');
+require_once('includes/helpers.php');
 
 $data = $_POST;
 
@@ -22,6 +23,10 @@ if (empty($data['message'])) {
 	// $errors['message'] = 'Message cannot be blank.';
 	$errors[] = array('name' => 'message', 'message' => 'Message cannot be blank.');
 }
+// validate recaptcha token
+if (empty($data['token'])) {
+	$errors[] = array('name' => 'token', 'message' => 'Invalid recatcha token.');
+}
 
 // validation errors - allow user to fix and try again
 if (!empty($errors)) {
@@ -34,8 +39,25 @@ if (!empty($errors)) {
 	die();
 }
 
+// verify recaptcha first
+$recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
+$recaptcha_params = array(
+	'secret' => RECAPTCHA_SECRET,
+	'response' => $data['token'],
+);
+$recaptcha_response_json = send_post_request($recaptcha_url, $recaptcha_params);
+$recaptcha_response = json_decode($recaptcha_response_json);
+if (!$recaptcha_response->success) {
+	// print out error json
+	echo json_encode(array(
+		'status' => 'error',
+		'message' => 'Error verifying captcha.',
+	));
+	die();
+}
+
 // set up email
-$params = array(
+$sendgrid_params = array(
 	'to' => 'kjnedrud@gmail.com',
 	'toname' => 'Kirsten J. Nedrud',
 	'from' => 'noreply@kirstenjnedrud.com',
@@ -45,30 +67,9 @@ $params = array(
 	'text' => $data['message'],
 );
 
-$request = SENDGRID_URL . 'api/mail.send.json';
+$sendgrid_url = SENDGRID_URL . 'api/mail.send.json';
 
-// Generate curl request
-$session = curl_init($request);
-// Tell PHP not to use SSLv3 (instead opting for TLS)
-curl_setopt($session, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1_2);
-curl_setopt($session, CURLOPT_HTTPHEADER, array('Authorization: Bearer ' . SENDGRID_API_KEY));
-// Tell curl to use HTTP POST
-curl_setopt ($session, CURLOPT_POST, true);
-// Tell curl that this is the body of the POST
-curl_setopt ($session, CURLOPT_POSTFIELDS, $params);
-// Tell curl not to return headers, but do return the response
-curl_setopt($session, CURLOPT_HEADER, false);
-curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
-
-// obtain response
-$response_json = curl_exec($session);
-
-// check for curl error
-if(curl_errno($session)){
-	error_log(curl_error($session));
-}
-
-curl_close($session);
+$response_json = send_post_request($sendgrid_url, $sendgrid_params, SENDGRID_API_KEY);
 
 // handle response
 if ($response_json) {

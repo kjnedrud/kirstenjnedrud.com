@@ -17,4 +17,8 @@ In the `includes` directory, copy `config-sample.php` to `config.php` and edit t
 
 ### Google Analytics
 * Tracking code will only be output when `ENV` is set to `prod`
-* Tracking ID: https://analytics.google.com/analytics/web/
+* Tracking ID: https://analytics.google.com/analytics/web
+
+### Google reCAPTCHA
+* Set up and get keys: https://www.google.com/recaptcha/admin
+* Documentation: https://developers.google.com/recaptcha/intro

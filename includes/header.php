@@ -27,6 +27,8 @@ require_once('includes/helpers.php');
 			gtag('config', '<?php echo GOOGLE_ANALYTICS_ID; ?>');
 		</script>
 	<?php endif; ?>
+	<!-- recaptcha -->
+	<script src="https://www.google.com/recaptcha/api.js?render=<?php echo RECAPTCHA_KEY; ?>"></script>
 </head>
 
 <body>

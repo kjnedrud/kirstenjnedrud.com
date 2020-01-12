@@ -15,3 +15,7 @@ define('SENDGRID_URL', 'https://api.sendgrid.com/');
 
 // google analytics
 define('GOOGLE_ANALYTICS_ID', '');
+
+// google recaptcha
+define('RECAPTCHA_KEY', '');
+define('RECAPTCHA_SECRET', '');

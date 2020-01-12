@@ -160,6 +160,9 @@ li {
   font-size: 0.75em;
   font-style: italic;
 }
+.note a {
+  font-weight: normal;
+}
 
 .error {
   color: #c06;
@@ -526,6 +529,12 @@ a[readonly].button, button[readonly], input[readonly][type=submit], input[readon
   opacity: 0.5;
 }
 
+.grecaptcha-badge {
+  height: 0;
+  left: -9999px;
+  visibility: hidden;
+}
+
 /**
  **********************************************************
  *
@@ -545,6 +554,7 @@ a[readonly].button, button[readonly], input[readonly][type=submit], input[readon
 }
 .site-header.fixed {
   position: fixed;
+  z-index: 999;
 }
 .site-header .container {
   opacity: 0.75;

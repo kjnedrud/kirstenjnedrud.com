@@ -66,3 +66,44 @@ function get_project_html($options, $echo = true) {
 		return ob_get_clean();
 	}
 }
+
+/**
+ * Wrapper function to send a cURL post request
+ * @param  [string] $url : request URL
+ * @param  [array] $params : associative array of params to send with request
+ * @param  [string] $auth : optional auth header token
+ * @return [string] $response_json : resposne as a JSON-encoded string
+ */
+function send_post_request($url, $params, $auth = null) {
+
+	// Generate curl request
+	$session = curl_init($url);
+
+	// Tell PHP not to use SSLv3 (instead opting for TLS)
+	curl_setopt($session, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1_2);
+
+	// Auth header
+	if ($auth) {
+		curl_setopt($session, CURLOPT_HTTPHEADER, array('Authorization: Bearer ' . $auth));
+	}
+
+	// Tell curl to use HTTP POST
+	curl_setopt ($session, CURLOPT_POST, true);
+	// Tell curl that this is the body of the POST
+	curl_setopt ($session, CURLOPT_POSTFIELDS, $params);
+	// Tell curl not to return headers, but do return the response
+	curl_setopt($session, CURLOPT_HEADER, false);
+	curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
+
+	// obtain response
+	$response_json = curl_exec($session);
+
+	// check for curl error
+	if(curl_errno($session)){
+		error_log(curl_error($session));
+	}
+
+	curl_close($session);
+
+	return $response_json;
+}
